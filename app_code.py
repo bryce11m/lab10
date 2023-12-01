@@ -31,13 +31,3 @@ top_names.columns = ['girl','boy']
 
 st.write(f"Top names in {selected_year}")
 st.dataframe(top_names)
-
-year_df = df[df['year'] == selected_year]
-girl_names = (year_df[year_df['sex'] == 'F'].sort_values(by='n', ascending=False)
-              .head(5).reset_index(drop=True))
-boy_names = (year_df[year_df['sex'] == 'M'].sort_values(by='n', ascending=False)
-             .head(5).reset_index(drop=True))
-top_names = pd.concat([girl_names, boy_names], axis=1)
-
-st.write(f"Top names in {selected_year}")
-st.dataframe(top_names)
